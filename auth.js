@@ -209,3 +209,8 @@ signupForm.addEventListener("submit", async (event) => {
 
     signupForm.reset();
 });
+supabase.auth.onAuthStateChange((event, session) => {
+    if (event === "SIGNED_IN" && session) {
+        window.location.href = "index.html";
+    }
+});
