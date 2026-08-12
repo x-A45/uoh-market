@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UoH Market — Buy & Sell Within Campus</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🏫</span>
+                <span>UoH Market</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#marketplace">Browse</a>
+                <a href="#categories">Categories</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="auth.html" class="login-btn">Log in</a>
+                <button class="sell-btn">+ Sell an Item</button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="campus-badge">
+                    🟢 Made for University of Hyderabad students
+                </div>
+
+                <h1>
+                    Buy & Sell
+                    <span>Within Campus.</span>
+                </h1>
+
+                <p>
+                    Find textbooks, electronics, cycles, hostel items and more
+                    from students around you.
+                </p>
+
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search for anything..."
+                    >
+
+                    <button id="searchButton">
+                        Search
+                    </button>
+
+                </div>
+
+
+                <div class="hero-actions">
+
+                     <button class="primary-btn" id="browseItemsBtn">
+                        Browse Items
+                    </button>  
+
+
+                    <button class="secondary-btn">
+                        + Sell Something
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="floating-card card-one">
+                    📚
+                    <div>
+                        <strong>Physics Books</strong>
+                        <small>₹450</small>
+                    </div>
+                </div>
+
+                <div class="floating-card card-two">
+                    💻
+                    <div>
+                        <strong>Laptop Stand</strong>
+                        <small>₹600</small>
+                    </div>
+                </div>
+
+                <div class="floating-card card-three">
+                    🚲
+                    <div>
+                        <strong>Cycle</strong>
+                        <small>₹2,500</small>
+                    </div>
+                </div>
+
+                <div class="hero-circle">
+                    🛒
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Categories -->
+        <section class="section" id="categories">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">EXPLORE</p>
+                    <h2>What are you looking for?</h2>
+                </div>
+
+                <a href="#marketplace">View all →</a>
+            </div>
+
+
+            <div class="category-grid">
+
+                <button class="category-card">
+                    <span>📚</span>
+                    <strong>Books</strong>
+                    <small>Textbooks & notes</small>
+                </button>
+
+                <button class="category-card">
+                    <span>💻</span>
+                    <strong>Electronics</strong>
+                    <small>Laptops & accessories</small>
+                </button>
+
+                <button class="category-card">
+                    <span>🪑</span>
+                    <strong>Hostel</strong>
+                    <small>Room essentials</small>
+                </button>
+
+                <button class="category-card">
+                    <span>🚲</span>
+                    <strong>Cycles</strong>
+                    <small>Bikes & accessories</small>
+                </button>
+
+                <button class="category-card">
+                    <span>🎧</span>
+                    <strong>Gadgets</strong>
+                    <small>Audio & devices</small>
+                </button>
+
+                <button class="category-card">
+                    <span>🎒</span>
+                    <strong>Others</strong>
+                    <small>Everything else</small>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Marketplace -->
+        <section class="section marketplace-section" id="marketplace">
+
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">MARKETPLACE</p>
+                    <h2>Latest listings</h2>
+                </div>
+
+                <button class="outline-btn">
+                    View all
+                </button>
+            </div>
+
+
+<div class="listing-grid" id="listingGrid">
+
+    <p class="loading-listings">
+        Loading listings...
+    </p>
+
+</div>
+
+                
+        </section>
+
+
+        <!-- Sell CTA -->
+        <section class="sell-section">
+
+            <div>
+
+                <p class="section-label">
+                    HAVE SOMETHING TO SELL?
+                </p>
+
+                <h2>
+                    Turn unused stuff<br>
+                    into cash.
+                </h2>
+
+                <p>
+                    List your item in a few minutes and reach students
+                    right here on campus.
+                </p>
+
+                <button class="primary-btn">
+                    + Post an Item
+                </button>
+
+            </div>
+
+            <div class="sell-illustration">
+                📦
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+                <div class="logo">
+                    🏫 UoH Market
+                </div>
+
+                <p>
+                    A student marketplace for the University of Hyderabad.
+                </p>
+            </div>
+
+            <div>
+                <strong>Marketplace</strong>
+                <a href="#marketplace">Browse Items</a>
+                <a href="#">Sell an Item</a>
+            </div>
+
+            <div>
+                <strong>Account</strong>
+                <a href="#">Log in</a>
+                <a href="#">Sign up</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 UoH Market. Built for students.
+        </div>
+
+    </footer>
+
+
+   <script type="module" src="/app.js"></script> 
+
+</body>
+</html>

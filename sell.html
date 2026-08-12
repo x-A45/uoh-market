@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sell an Item — UoH Market</title>
+
+    <link rel="stylesheet" href="sell.css">
+</head>
+
+<body>
+
+<header class="sell-navbar">
+
+    <a href="index.html" class="brand">
+        🏫 <span>UoH Market</span>
+    </a>
+
+    <a href="index.html" class="back-link">
+        ← Back to marketplace
+    </a>
+
+</header>
+
+
+<main class="sell-page">
+
+    <section class="sell-header">
+
+        <span class="eyebrow">SELL ON CAMPUS</span>
+
+        <h1>List something for sale.</h1>
+
+        <p>
+            Reach students around you and turn unused things
+            into useful cash.
+        </p>
+
+    </section>
+
+
+    <section class="sell-card">
+
+        <form id="sellForm">
+
+            <!-- Images -->
+
+            <div class="form-section">
+
+                <h2>Photos</h2>
+
+                <p class="form-help">
+                    Add up to 5 photos. Clear photos help buyers trust the listing.
+                </p>
+
+                <label class="upload-box" for="imageInput">
+
+                    <span class="upload-icon">📸</span>
+
+                    <strong>Add photos</strong>
+
+                    <small>
+                        JPG, PNG or WEBP
+                    </small>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/jpeg,image/png,image/webp"
+                    multiple
+                    hidden
+                >
+
+                <div id="imagePreview" class="image-preview"></div>
+
+            </div>
+
+
+            <!-- Basic information -->
+
+            <div class="form-section">
+
+                <h2>Item details</h2>
+
+                <div class="form-grid">
+
+                    <div class="field full">
+
+                        <label for="title">
+                            Item name
+                        </label>
+
+                        <input
+                            id="title"
+                            type="text"
+                            maxlength="100"
+                            placeholder="e.g. Casio Scientific Calculator"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <select id="category" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Books">
+                                Books
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Hostel">
+                                Hostel
+                            </option>
+
+                            <option value="Cycles">
+                                Cycles
+                            </option>
+
+                            <option value="Gadgets">
+                                Gadgets
+                            </option>
+
+                            <option value="Clothing">
+                                Clothing
+                            </option>
+
+                            <option value="Sports">
+                                Sports
+                            </option>
+
+                            <option value="Others">
+                                Others
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="condition">
+                            Condition
+                        </label>
+
+                        <select id="condition" required>
+
+                            <option value="">
+                                Select condition
+                            </option>
+
+                            <option value="New">
+                                New
+                            </option>
+
+                            <option value="Like New">
+                                Like New
+                            </option>
+
+                            <option value="Good">
+                                Good
+                            </option>
+
+                            <option value="Fair">
+                                Fair
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="price">
+                            Price (₹)
+                        </label>
+
+                        <input
+                            id="price"
+                            type="number"
+                            min="0"
+                            step="1"
+                            placeholder="500"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="hostel">
+                            Location / Hostel
+                        </label>
+
+                        <input
+                            id="hostel"
+                            type="text"
+                            maxlength="80"
+                            placeholder="e.g. Men's Hostel I"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label for="description">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="description"
+                            maxlength="1000"
+                            rows="6"
+                            placeholder="Describe the item, how long you've used it, any defects, and anything the buyer should know."
+                            required
+                        ></textarea>
+
+                        <small class="counter">
+                            <span id="descriptionCount">0</span>/1000
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="formMessage" class="form-message"></div>
+
+
+            <button
+                type="submit"
+                id="postButton"
+                class="post-button"
+            >
+                Post Item
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<script type="module" src="sell.js"></script>
+
+</body>
+</html>

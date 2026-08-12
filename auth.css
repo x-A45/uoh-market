@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #1e7a4d;
+    --green-dark: #145b38;
+    --green-light: #e6f4ec;
+    --background: #f7f8f6;
+    --white: #ffffff;
+    --text: #172018;
+    --muted: #68706a;
+    --border: #e1e6e1;
+    --error: #b42318;
+    --success: #16794c;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+}
+
+.auth-visual {
+    padding: 45px;
+    background: #173a29;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand {
+    width: fit-content;
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 800;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.visual-content {
+    max-width: 600px;
+    margin: auto 0;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: #92dfb2;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.visual-content h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+}
+
+.visual-content h1 span {
+    display: block;
+    color: #86dca9;
+}
+
+.visual-content p {
+    max-width: 500px;
+    margin-top: 25px;
+
+    color: #c8dbce;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.visual-items {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.visual-items div {
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+
+    font-size: 1.6rem;
+}
+
+.auth-panel {
+    display: grid;
+    place-items: center;
+    padding: 35px;
+}
+
+.auth-box {
+    width: min(430px, 100%);
+}
+
+.mobile-brand {
+    display: none;
+}
+
+.auth-heading {
+    margin-bottom: 30px;
+}
+
+.auth-heading h2 {
+    font-size: 2.2rem;
+    letter-spacing: -0.04em;
+}
+
+.auth-heading p {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 7px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 19px;
+    padding: 14px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--white);
+    color: var(--text);
+
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(30, 122, 77, 0.1);
+}
+
+.auth-button {
+    margin-top: 5px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: var(--green);
+    color: white;
+
+    font-weight: 800;
+}
+
+.auth-button:hover {
+    background: var(--green-dark);
+}
+
+.switch-text {
+    margin-top: 22px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.switch-text button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--green);
+    font-weight: 800;
+}
+
+.message {
+    min-height: 25px;
+    margin-top: 18px;
+
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.message.error {
+    color: var(--error);
+}
+
+.message.success {
+    color: var(--success);
+}
+
+.message.info {
+    color: var(--muted);
+}
+
+.hidden {
+    display: none;
+}
+
+.back-home {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-home:hover {
+    color: var(--green);
+}
+
+@media (max-width: 800px) {
+
+    .auth-page {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-visual {
+        display: none;
+    }
+
+    .auth-panel {
+        min-height: 100vh;
+        padding: 25px;
+    }
+
+    .mobile-brand {
+        display: block;
+        margin-bottom: 45px;
+
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account — UoH Market</title>
+
+    <link rel="stylesheet" href="account.css">
+</head>
+
+<body>
+
+<header class="account-navbar">
+
+    <a href="index.html" class="brand">
+        🏫 UoH Market
+    </a>
+
+    <a href="index.html" class="back-link">
+        ← Marketplace
+    </a>
+
+</header>
+
+
+<main class="account-page">
+
+    <section class="account-header">
+
+        <div class="avatar" id="avatar">
+            A
+        </div>
+
+        <div>
+            <p class="eyebrow">MY ACCOUNT</p>
+
+            <h1 id="userName">
+                Loading...
+            </h1>
+
+            <p id="userEmail">
+                Loading...
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="account-grid">
+
+        <a href="sell.html" class="account-card">
+
+            <span class="card-icon">➕</span>
+
+            <div>
+                <h2>Sell an Item</h2>
+                <p>Post something for sale.</p>
+            </div>
+
+        </a>
+
+
+        <button id="myListingsButton" class="account-card">
+
+            <span class="card-icon">📦</span>
+
+            <div>
+                <h2>My Listings</h2>
+                <p>View items you've posted.</p>
+            </div>
+
+        </button>
+
+
+        <button id="logoutButton" class="account-card logout-card">
+
+            <span class="card-icon">↪</span>
+
+            <div>
+                <h2>Log out</h2>
+                <p>Sign out of your account.</p>
+            </div>
+
+        </button>
+
+    </section>
+
+
+    <section id="myListingsSection" class="my-listings hidden">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="eyebrow">YOUR ITEMS</p>
+                <h2>My Listings</h2>
+            </div>
+
+        </div>
+
+        <div id="myListingsGrid" class="listing-grid">
+
+            <p class="loading">
+                Loading your listings...
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script type="module" src="account.js"></script>
+
+</body>
+
+</html>
