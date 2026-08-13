@@ -62,12 +62,13 @@ loginForm.addEventListener("submit", async (event) => {
     showMessage("Sending OTP to your email...", "info");
 
     try {
-        const { error } = await supabase.auth.signInWithOtp({
-            email: email,
-            options: {
-                shouldCreateUser: false
-            }
-        });
+       const { error } = await supabase.auth.signInWithOtp({
+    email: email,
+    options: {
+        shouldCreateUser: false,
+        emailRedirectTo: "https://x-a45.github.io/uoh-market/auth.html"
+    }
+});
 
         if (error) {
             console.error("OTP error:", error);
@@ -187,7 +188,7 @@ signupForm.addEventListener("submit", async (event) => {
     email,
     password,
     options: {
-        emailRedirectTo: "http://localhost:5173/auth.html",
+        emailRedirectTo: "https://x-a45.github.io/uoh-market/auth.html",
         data: {
             full_name: name
         }
