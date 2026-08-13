@@ -34,11 +34,9 @@ showLoginButton.addEventListener("click", () => {
 });
 
 
-const otpSection = document.getElementById("otpSection");
-const otpInput = document.getElementById("otpInput");
-const verifyOtpButton = document.getElementById("verifyOtpButton");
 
-let loginEmailForOtp = "";
+
+
 
 loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -57,9 +55,9 @@ loginForm.addEventListener("submit", async (event) => {
         return;
     }
 
-    loginEmailForOtp = email;
+    
 
-    showMessage("Sending OTP to your email...", "info");
+   showMessage("Sending sign-in link to your email...", "info");
 
     try {
        const { error } = await supabase.auth.signInWithOtp({
@@ -71,93 +69,27 @@ loginForm.addEventListener("submit", async (event) => {
 });
 
         if (error) {
-            console.error("OTP error:", error);
+            console.error("Sign-in link error:", error);
             showMessage(error.message, "error");
             return;
         }
 
-        loginForm.style.display = "none";
-        otpSection.style.display = "block";
+       
+    showMessage(
+        "Sign-in link sent! Check your UoH email and click the link to continue.",
+        "success"
+    );
 
-        showMessage(
-            "OTP sent! Check your UoH email.",
-            "success"
-        );
+} catch (error) {
+    console.error(error);
 
-        otpInput.focus();
+    showMessage(
+        "Could not send sign-in link. Please try again.",
+        "error"
+    );
+}
+});  
 
-    } catch (error) {
-        console.error(error);
-
-        showMessage(
-            "Could not send OTP. Please try again.",
-            "error"
-        );
-    }
-});
-
-verifyOtpButton.addEventListener("click", async () => {
-
-    const token = otpInput.value.trim();
-
-    if (!/^\d{8}$/.test(token)) {
-        showMessage(
-            "Please enter the 6-digit OTP.",
-            "error"
-        );
-        return;
-    }
-
-    showMessage("Verifying OTP...", "info");
-
-    try {
-
-        const { data, error } =
-            await supabase.auth.verifyOtp({
-                email: loginEmailForOtp,
-                token: token,
-                type: "email"
-            });
-
-        if (error) {
-            console.error("OTP verification error:", error);
-
-            showMessage(
-                error.message,
-                "error"
-            );
-
-            return;
-        }
-
-        if (!data.session) {
-            showMessage(
-                "Login could not be completed. Please try again.",
-                "error"
-            );
-
-            return;
-        }
-
-        showMessage(
-            "Login successful! Redirecting...",
-            "success"
-        );
-
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 800);
-
-    } catch (error) {
-
-        console.error(error);
-
-        showMessage(
-            "Invalid OTP. Please try again.",
-            "error"
-        );
-    }
-});
 
 
 signupForm.addEventListener("submit", async (event) => {
